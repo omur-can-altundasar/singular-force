@@ -22,7 +22,8 @@ public class PlayerInputManager : MonoBehaviour
         _playerMover.Move(_inputMovement);
         _weaponSway.Sway(_inputRotation);
 
-        if (PlayerShoot.isFiring) {
+        if (PlayerShoot.isFiring)
+        {
             PlayerShoot.shootInput?.Invoke();
         }
     }
@@ -31,7 +32,6 @@ public class PlayerInputManager : MonoBehaviour
     public void OnPlayerMove(InputAction.CallbackContext callbackContext)
     {
         _inputMovement = callbackContext.ReadValue<Vector2>();
-        Debug.Log(_inputMovement);
     }
 
 

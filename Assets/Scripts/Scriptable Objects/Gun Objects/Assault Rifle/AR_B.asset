@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3243ebd06d40b4f69b5c2af89377c92e, type: 3}
   m_Name: AR_B
   m_EditorClassIdentifier: 
-  name: Assault Rifle
+  name: AK-47
   damage: 20
   maxDistance: 200
   magazineSize: 30
   currentAmmo: 30
-  reserveAmmo: 90
+  reserveAmmo: 99013
   fireRate: 600
   reloadTime: 1.5
   reloading: 0

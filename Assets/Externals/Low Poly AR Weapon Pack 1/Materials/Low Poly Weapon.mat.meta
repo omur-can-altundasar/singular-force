@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2a461ee17a7f0b8449bd2c6e34b0e286
+guid: 8764cc1c405a8174ea7c54e342284e0f
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
@@ -8,8 +8,8 @@ NativeFormatImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 276916
-  packageName: Low Poly AR Weapon Pack 1
+  productId: 285693
+  packageName: Low Poly Pistol Weapon Pack 1
   packageVersion: 1.1
-  assetPath: Assets/Low Poly AR Weapon Pack 1/Materials/Low Poly Weapon.mat
-  uploadId: 721596
+  assetPath: Assets/Externals/Low Poly AR Weapon Pack 1/Materials/Low Poly Weapon.mat
+  uploadId: 729399
