@@ -9,37 +9,32 @@ public class PlayerInputManager : MonoBehaviour
     private Vector2 _inputMovement;
     private Vector2 _inputRotation;
 
-
-    void Start()
+    void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-
 
     void Update()
     {
         _playerMover.Move(_inputMovement);
         _weaponSway.Sway(_inputRotation);
 
-        if (PlayerShoot.isFiring)
+        if (PlayerShoot.isShooting)
         {
-            PlayerShoot.shootInput?.Invoke();
+            PlayerShoot.OnShootInput?.Invoke();
         }
     }
-
 
     public void OnPlayerMove(InputAction.CallbackContext callbackContext)
     {
         _inputMovement = callbackContext.ReadValue<Vector2>();
     }
 
-
     public void OnPlayerJump(InputAction.CallbackContext callbackContext)
     {
         _playerMover.Jump();
     }
-
 
     public void OnPlayerLook(InputAction.CallbackContext callbackContext)
     {
@@ -47,16 +42,15 @@ public class PlayerInputManager : MonoBehaviour
         _playerLooker.Look(_inputRotation);
     }
 
-
     public void OnPlayerFire(InputAction.CallbackContext callbackContext)
     {
         if (callbackContext.started)
         {
-            PlayerShoot.isFiring = true;
+            PlayerShoot.isShooting = true;
         }
         else if (callbackContext.canceled)
         {
-            PlayerShoot.isFiring = false;
+            PlayerShoot.isShooting = false;
         }
     }
 
@@ -64,8 +58,7 @@ public class PlayerInputManager : MonoBehaviour
     {
         if (callbackContext.started)
         {
-            PlayerShoot.reloadInput?.Invoke();
+            PlayerShoot.OnReloadInput?.Invoke();
         }
     }
-
 }

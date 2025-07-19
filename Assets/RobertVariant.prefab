@@ -727,6 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gunData: {fileID: 11400000, guid: ca4c07ead67348448ab34b94dd2748ab, type: 2}
+  _gunAudioSource: {fileID: 0}
   _gunFireSound: {fileID: 8300000, guid: 30700cbdd5f9d47bd9803777377ecae3, type: 3}
   _muzzle: {fileID: 4384426680668806392}
   _ammoHUD: {fileID: 0}
@@ -7642,11 +7643,10 @@ GameObject:
   - component: {fileID: 3750897098606768653}
   - component: {fileID: 6498757693267805456}
   - component: {fileID: 8516271842896415564}
-  - component: {fileID: 7901241831402662196}
   - component: {fileID: 5517013569766979241}
   - component: {fileID: 2722815832471163094}
   m_Layer: 0
-  m_Name: Robert Variant
+  m_Name: RobertVariant
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7723,18 +7723,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lookSpeed: 10
   upperPivotPoint: {fileID: 4185392177625650521}
---- !u!114 &7901241831402662196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7366292217372833877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cfd336de917d4f35861203bc1a4ee76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5517013569766979241
 MonoBehaviour:
   m_ObjectHideFlags: 0

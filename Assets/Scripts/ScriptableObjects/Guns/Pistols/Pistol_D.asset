@@ -19,5 +19,4 @@ MonoBehaviour:
   currentAmmo: 7
   reserveAmmo: 99619
   fireRate: 200
-  reloadTime: 1
   reloading: 0

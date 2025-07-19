@@ -79,7 +79,7 @@ public class WeaponSwitcher : MonoBehaviour
 
     private void OnWeaponSwitched()
     {
-        PlayerShoot.isFiring = false;
+        PlayerShoot.isShooting = false;
         Debug.Log("A new weapon has been switched!");
     }
 }

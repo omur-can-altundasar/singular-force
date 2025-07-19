@@ -8,7 +8,6 @@ public class PlayerLooker : MonoBehaviour
     private float _rotationY;
     [SerializeField] private Transform upperPivotPoint;
 
-
     public void Look(Vector2 inputRotation)
     {
         _rotationX += _lookSpeed * Time.deltaTime * inputRotation.y;

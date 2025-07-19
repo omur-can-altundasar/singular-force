@@ -16,8 +16,10 @@ public class Health : MonoBehaviour, IDamageable
 
     public void TakeDamage(float amount)
     {
-        if (_isDead) return;    // Destroy objeyi hemen yok etmez dolayısıyla aynı kare içerisinde
-                                // iki kez Die() tetiklendiğinde _isDead bayrağı tetiklenmeyi engeller
+        if (_isDead) return;    // Hasar alındığında TakeDamage() tetiklenir.
+                                // Eğer OnDamageTaken event'ine abone bir metot içerisinde oynatılan animasyon klibinde
+        _isDead = true;         // yanlışlıkla animation event'ına TakeDamage() metodu abone edilirse TakeDamage() bir kez daha tetiklenir
+                                // Bu iki kez tetiklenmeyi _isDead bayrağı engeller.
 
         _currentHealth -= amount;
 
@@ -25,20 +27,8 @@ public class Health : MonoBehaviour, IDamageable
 
         if (_currentHealth <= 0)
         {
-            Die();
+            OnDie?.Invoke();
         }
-    }
-
-    private void Die()
-    {                           
-        if (_isDead) return;    // yanlışlıkla ölüm animasyonunun event'ına Kill() yerine
-                                // yanlışlıkla Die() metodu bağlanırsa iki kere Die() tetiklenmesini 
-                                // engellemek için _isDead bayrağı burada da kullanıldı
-        _isDead = true;
-
-        OnDie?.Invoke();
-
-        Kill();
     }
 
     public void Kill()

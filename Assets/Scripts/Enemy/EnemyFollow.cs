@@ -6,9 +6,7 @@ public class EnemyFollow : MonoBehaviour
     [SerializeField] private float _followSpeed = 0.5f;
     [SerializeField] private float _minDistance = 5f;
 
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         transform.LookAt(_player.transform);
 
@@ -18,6 +16,5 @@ public class EnemyFollow : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, _player.position, _followSpeed * Time.deltaTime);
         }
-
     }
 }

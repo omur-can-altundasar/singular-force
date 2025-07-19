@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class BreakableBox : MonoBehaviour, IDamageable
+public class BreakableCrate : MonoBehaviour, IDamageable
 {
     [SerializeField] private float _durability = 100f;
-
     private bool _isBroken;
 
     public void TakeDamage(float amount)

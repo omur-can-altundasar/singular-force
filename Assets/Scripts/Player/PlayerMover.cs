@@ -13,12 +13,10 @@ public class PlayerMover : MonoBehaviour
 
     private float _verticalVelocity;
 
-
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
     }
-
 
     public void ApplyGravity()
     {
@@ -26,7 +24,6 @@ public class PlayerMover : MonoBehaviour
         _verticalVelocity = Mathf.Max(_verticalVelocity, -20f);
         _characterController.Move(new Vector3(0, _verticalVelocity, 0) * Time.deltaTime);
     }
-
 
     public void Move(Vector2 inputMovement)
     {
@@ -36,7 +33,6 @@ public class PlayerMover : MonoBehaviour
         ApplyGravity();
     }
 
-
     public void Jump()
     {
         if (_characterController.isGrounded)
@@ -44,6 +40,4 @@ public class PlayerMover : MonoBehaviour
             _verticalVelocity = Mathf.Sqrt(-2f * _gravity * _jumpHeight);
         }
     }
-
-
 }
