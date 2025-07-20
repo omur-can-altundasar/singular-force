@@ -6,7 +6,7 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] private PlayerMover _playerMover;
     [SerializeField] private PlayerLooker _playerLooker;
     [SerializeField] private WeaponSway _weaponSway;
-    private Vector2 _inputMovement;
+    public Vector2 _inputMovement;
     private Vector2 _inputRotation;
 
     void Awake()
