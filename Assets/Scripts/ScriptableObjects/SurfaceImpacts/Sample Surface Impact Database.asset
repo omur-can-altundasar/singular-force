@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b366adfd4bc845f39c95295e97d01e8, type: 3}
-  m_Name: New Surface Impact Database
+  m_Name: Sample Surface Impact Database
   m_EditorClassIdentifier: 
-  entries:
-  - type: 0
-    decalPrefab: {fileID: 0}
+  SurfaceImpacts:
+  - SurfaceType: 3
+    DecalPrefab: {fileID: 7782182010329962159, guid: 97c20f03e63e146098e6afc26e95f42a, type: 3}
+    ParticlePrefab: {fileID: 0}
+    ImpactSound: {fileID: 0}

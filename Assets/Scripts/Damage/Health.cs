@@ -14,7 +14,7 @@ public class Health : MonoBehaviour, IDamageable
         _currentHealth = _maxHealth;
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, Vector3 hitPoint, Vector3 hitNormal)
     {
         if (_isDead) return;    // Hasar alındığında TakeDamage() tetiklenir.
                                 // Eğer OnDamageTaken event'ine abone bir metot içerisinde oynatılan animasyon klibinde
@@ -22,6 +22,7 @@ public class Health : MonoBehaviour, IDamageable
                                 // Bu iki kez tetiklenmeyi _isDead bayrağı engeller.
 
         _currentHealth -= amount;
+        Debug.Log($"{gameObject.name} took {amount} damage. Remaining health: {_currentHealth}");
 
         OnDamageTaken?.Invoke(_currentHealth);
 
@@ -33,6 +34,7 @@ public class Health : MonoBehaviour, IDamageable
 
     public void Kill()
     {
+        Debug.Log($"{gameObject.name} has died.");
         gameObject.SetActive(false);
     }
 }

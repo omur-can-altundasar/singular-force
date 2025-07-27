@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     [Header("References")]
     [SerializeField] private GunData _gunData;
     private LayerMask targetMask;
+    [SerializeField] private ImpactHandler _impactHandler;
 
     [Header("Effects References")]
     [SerializeField] private AudioSource _gunAudioSource;
@@ -71,8 +72,11 @@ public class Gun : MonoBehaviour
 
             if (hitInfo.collider.gameObject.TryGetComponent<IDamageable>(out var damageable))
             {
-                damageable.TakeDamage(_gunData.damage);
+                damageable.TakeDamage(_gunData.damage, hitInfo.point, hitInfo.normal);
             }
+
+            // Görsel/işitsel etki ver
+            _impactHandler.HandleImpact(hitInfo);
         }
 
         timeSinceLastShot = 0;

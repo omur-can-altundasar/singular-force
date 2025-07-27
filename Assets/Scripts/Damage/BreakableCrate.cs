@@ -5,7 +5,7 @@ public class BreakableCrate : MonoBehaviour, IDamageable
     [SerializeField] private float _durability = 100f;
     private bool _isBroken;
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, Vector3 hitPoint, Vector3 hitNormal)
     {
         if (_isBroken) return;
 
@@ -13,7 +13,7 @@ public class BreakableCrate : MonoBehaviour, IDamageable
 
         if (_durability <= 0)
         {
-            Break();
+            //Break();
         }
     }
 
